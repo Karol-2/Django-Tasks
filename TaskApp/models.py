@@ -13,3 +13,5 @@ class Task(models.Model):
     category = models.ForeignKey(Category, related_name='tasks', on_delete=models.CASCADE)
 
 
+# python manage.py makemigrations
+# python manage.py migrate
