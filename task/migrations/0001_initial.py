@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=25)),
                 ('description', models.CharField(max_length=255)),
                 ('completed', models.BooleanField()),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tasks', to='TaskApp.category')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tasks', to='task.category')),
             ],
         ),
     ]
