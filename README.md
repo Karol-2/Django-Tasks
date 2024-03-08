@@ -23,5 +23,5 @@ This account is used to authenticate api CUD requests in my postman request coll
      ```
 2. Create Docker container
    ```shell
-     docker run -p 8000:8000 django-tasks
+   docker run -p 8000:8000 django-tasks
      ```
