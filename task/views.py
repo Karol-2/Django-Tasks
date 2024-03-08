@@ -1,5 +1,5 @@
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+from .permissions import ReadOnlyOrAuthenticated
 
 from .models import Task, Category
 from .serializers import TaskSerializer, CategorySerializer
@@ -8,23 +8,23 @@ from .serializers import TaskSerializer, CategorySerializer
 class TaskList(generics.ListCreateAPIView):
     serializer_class = TaskSerializer
     queryset = Task.objects.all()
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [ReadOnlyOrAuthenticated]
 
 
 class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = TaskSerializer
     queryset = Task.objects.all()
-    permission_classes = [IsAuthenticated]
+    permission_classes = [ReadOnlyOrAuthenticated]
 
 
 class CategoryList(generics.ListCreateAPIView):
     serializer_class = CategorySerializer
     queryset = Category.objects.all()
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [ReadOnlyOrAuthenticated]
 
 
 class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CategorySerializer
     queryset = Category.objects.all()
-    permission_classes = [IsAuthenticated]
+    permission_classes = [ReadOnlyOrAuthenticated]
 
